@@ -1,6 +1,6 @@
 debut=$(date +%s)
 
-docker build -t tdesktop:centos_env Telegram/build/docker/centos_env
+docker build -t tdesktop:centos_env tdesktop/Telegram/build/docker/centos_env
 
 fin=$(date +%s)
 duree=$(( $fin - $debut ))
