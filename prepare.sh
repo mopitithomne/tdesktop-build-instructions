@@ -1,25 +1,25 @@
-debut=$(date +%s)
+start=$(date +%s)
 
 ORANGE='\033[0;33m'
 GREEN='\033[0;32m'
 WHITE='\033[0m'
 
 if [ -d tdesktop ]; then
-echo "Dossier source existe, mise à jour du code source.."
+echo "Source folder already exists, updating the source.."
 cd tdesktop
 git pull --recurse-submodules && \
-printf "${GREEN}Source mise à jour" || printf "${ORANGE}Source non mise à jour"
+printf "${GREEN}Source updated!" || printf "${ORANGE}Source update failed."
 
 else
 
-echo "Dossier source n'existe pas, téléchargement de la source.."
+echo "Source folder doesn't exist, downloading it...."
 git clone --recursive https://github.com/telegramdesktop/tdesktop.git && \
-printf "${GREEN}Source téléchargée" || printf "${ORANGE}Source non téléchargée"
+printf "${GREEN}Source downloaded!" || printf "${ORANGE}Source download failed."
 
 fi
 
-fin=$(date +%s)
-duree=$(( $fin - $debut ))
+end=$(date +%s)
+duration=$(( $end - $start ))
 
-printf " en $duree secondes ${WHITE}\n"
+printf " in $duration seconds ${WHITE}\n"
 

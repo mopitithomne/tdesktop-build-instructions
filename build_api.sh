@@ -5,7 +5,7 @@ if [ $# -eq 0 ]
 fi
 
 
-debut=$(date +%s)
+start=$(date +%s)
 
 docker run -v $PWD/tdesktop:/usr/src/tdesktop tdesktop:centos_env /usr/src/tdesktop/Telegram/build/docker/centos_env/build.sh \
 -D TDESKTOP_API_ID=$1 \
@@ -13,9 +13,9 @@ docker run -v $PWD/tdesktop:/usr/src/tdesktop tdesktop:centos_env /usr/src/tdesk
 -D DESKTOP_APP_USE_PACKAGED=OFF \
 -D DESKTOP_APP_DISABLE_CRASH_REPORTS=OFF
 
-fin=$(date +%s)
-duree=$(( $fin - $debut ))
-printf "Build API effectué en $duree secondes \n"
+end=$(date +%s)
+duration=$(( $end - $start ))
+printf "Build API done in $duration seconds \n"
 
 pkill Telegram
 tdesktop/out/Release/bin/Telegram &
