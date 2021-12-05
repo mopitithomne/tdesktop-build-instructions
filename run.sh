@@ -15,7 +15,7 @@ docker run -v $PWD/tdesktop:/usr/src/tdesktop tdesktop:centos_env /usr/src/tdesk
 
 end=$(date +%s)
 duration=$(( $end - $start ))
-printf "Build API done in $duration seconds \n"
+printf "Docker run done in $duration seconds \n"
 
 pkill Telegram
 tdesktop/out/Release/bin/Telegram &
