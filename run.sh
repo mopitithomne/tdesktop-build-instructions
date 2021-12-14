@@ -18,5 +18,5 @@ duration=$(( $end - $start ))
 printf "Docker run done in $duration seconds \n"
 
 pkill Telegram
-tdesktop/out/Release/bin/Telegram &
+tdesktop/out/Release/Telegram &
 
